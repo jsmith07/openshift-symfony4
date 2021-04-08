@@ -1,17 +1,26 @@
 {
+  "name": "symfony/skeleton",
   "type": "project",
-  "license": "proprietary",
+  "license": "MIT",
+  "description": "A minimal Symfony project recommended to create bare bones applications",
+  "minimum-stability": "dev",
   "require": {
-    "php": "^7.4",
+    "php": ">=7.2.5",
     "ext-ctype": "*",
     "ext-iconv": "*",
-    "symfony/console": "4.2.*",
-    "symfony/dotenv": "4.2.*",
-    "symfony/flex": "^1.1",
-    "symfony/framework-bundle": "4.2.*",
-    "symfony/yaml": "4.2.*"
+    "symfony/flex": "^1.3.1"
+  },
+  "flex-require": {
+    "symfony/console": "*",
+    "symfony/dotenv": "*",
+    "symfony/framework-bundle": "*",
+    "symfony/runtime": "*",
+    "symfony/yaml": "*"
+  },
+  "require-dev": {
   },
   "config": {
+    "optimize-autoloader": true,
     "preferred-install": {
       "*": "dist"
     },
@@ -28,20 +37,14 @@
     }
   },
   "replace": {
-    "paragonie/random_compat": "2.*",
     "symfony/polyfill-ctype": "*",
     "symfony/polyfill-iconv": "*",
-    "symfony/polyfill-php71": "*",
-    "symfony/polyfill-php70": "*",
-    "symfony/polyfill-php56": "*"
+    "symfony/polyfill-php72": "*"
   },
   "scripts": {
-    "auto-scripts": {
-      "cache:clear": "symfony-cmd",
-      "assets:install %PUBLIC_DIR%": "symfony-cmd"
-    },
+    "auto-scripts": [
+    ],
     "post-install-cmd": [
-      "App\\Console\\Installer::postInstall",
       "@auto-scripts"
     ],
     "post-update-cmd": [
@@ -54,10 +57,7 @@
   "extra": {
     "symfony": {
       "allow-contrib": false,
-      "require": "4.2.*"
+      "require": "5.*"
     }
-  },
-  "require-dev": {
-    "symfony/web-server-bundle": "4.2.*"
   }
 }
